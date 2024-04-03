@@ -1,0 +1,21 @@
+{
+  "files.associations": {
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.xml": "html",
+    "*.svg": "html",
+    "*.html": "html",
+    "django-html": "html",
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/base_templates/**/*.html": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "cmath": "cpp",
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "string_view": "cpp",
+    "vector": "cpp",
+    "deque": "cpp",
+    "string": "cpp"
+  }
+}
