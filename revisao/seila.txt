@@ -1,0 +1,15 @@
+Desafio 2
+
+Desenvolva um programa que encontre o menor número primo que
+é igual à soma de uma quantidade específica  de números primos
+consecutivos. O programa deve solicitar ao usuário que insira
+o valor de N e, em seguida, calcular qual é o menor número primo
+que pode ser representado como a soma de números primos consecutivos.
+Após encontrar esse número primo, o programa deve imprimir o número
+encontrado e a sequência de números primos consecutivos que somados
+resultam nele.
+
+
+Para um valor de , a saída pode ser algo como:
+O menor número primo que é a soma de 2 números primos consecutivos é 5. 
+Números primos consecutivos: 2, 3
