@@ -19,3 +19,6 @@ int main() {
 // Pergunta:
 // Dado um vetor de inteiros v com tamanho n,
 // escreva um programa para calcular o desvio padrão dos elementos desse vetor.
+
+  for (int i = 0; i < numero; i++) {
+    vetor[i] = i + 1;
