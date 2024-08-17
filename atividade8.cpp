@@ -1,7 +1,8 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
 using namespace std;
 
-void somaMatrizes(int LINHAS, int COLUNAS){
+void somaMatrizes(int LINHAS, int COLUNAS) {
     int matrizA[LINHAS][COLUNAS];
     int matrizB[LINHAS][COLUNAS];
     int matrizC[LINHAS][COLUNAS];
@@ -35,7 +36,7 @@ void somaMatrizes(int LINHAS, int COLUNAS){
     }
 }
 
-void preencherEMostrarMatrizes(int TAMANHO){
+void preencherEMostrarMatrizes(int TAMANHO) {
     int matrizA[TAMANHO];
     int matrizB[TAMANHO];
     int matrizC[TAMANHO][2];
@@ -63,7 +64,7 @@ void preencherEMostrarMatrizes(int TAMANHO){
     }
 }
 
-void preencherEMostrarMatriz(int LINHAS, int COLUNAS){
+void preencherEMostrarMatriz(int LINHAS, int COLUNAS) {
     int matriz[LINHAS][COLUNAS];
 
     cout << "Digite " << LINHAS * COLUNAS << " elementos para a matriz (" << LINHAS << "x" << COLUNAS << "):\n";
@@ -83,7 +84,7 @@ void preencherEMostrarMatriz(int LINHAS, int COLUNAS){
     }
 }
 
-void processarMatriz(int TAMANHO, int matrizA[], int matrizC[][3]){
+void processarMatriz(int TAMANHO, int matrizA[], int matrizC[][3]) {
     for (int i = 0; i < TAMANHO; ++i) {
         cout << "Digite o elemento A[" << i << "]: ";
         cin >> matrizA[i];
@@ -107,7 +108,7 @@ void processarMatriz(int TAMANHO, int matrizA[], int matrizC[][3]){
     }
 }
 
-void processarMatrizes(int TAMANHO, float matrizA[], float matrizB[], float matrizC[][2]){
+void processarMatrizes(int TAMANHO, float matrizA[], float matrizB[], float matrizC[][2]) {
     for (int i = 0; i < TAMANHO; ++i) {
         cout << "Elemento A[" << i << "]: ";
         cin >> matrizA[i];
@@ -141,7 +142,7 @@ void processarMatrizes(int TAMANHO, float matrizA[], float matrizB[], float matr
     }
 }
 
-void processarMatrizesQuadrada(int LINHAS, int COLUNAS){
+void processarMatrizesQuadrada(int LINHAS, int COLUNAS) {
     int matrizA[LINHAS][COLUNAS];
     int matrizB[LINHAS][COLUNAS];
 
@@ -163,7 +164,7 @@ void processarMatrizesQuadrada(int LINHAS, int COLUNAS){
     }
 
     cout << "\nMatriz A:\n";
-    for (int i = 0; i < LINHAS; ++i) {
+    for (int i = 0; i < LINHAS; ++j) {
         for (int j = 0; j < COLUNAS; ++j) {
             cout << matrizA[i][j] << " ";
         }
@@ -179,7 +180,7 @@ void processarMatrizesQuadrada(int LINHAS, int COLUNAS){
     }
 }
 
-void converterTemperaturas(int LINHAS, int COLUNAS){
+void converterTemperaturas(int LINHAS, int COLUNAS) {
     float matrizA[LINHAS][COLUNAS];
     float matrizB[LINHAS][COLUNAS];
 
@@ -204,4 +205,148 @@ void converterTemperaturas(int LINHAS, int COLUNAS){
         cout << endl;
     }
 
-    cout << "\nMatriz B (Temperaturas em Fahrenheit):\
+    cout << "\nMatriz B (Temperaturas em Fahrenheit):\n";
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            cout << matrizB[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void preencherEMostrarMatrizComValorFixo(int LINHAS, int COLUNAS) {
+    int matriz[LINHAS][COLUNAS];
+
+    cout << "Digite o valor para preencher a matriz: ";
+    int valor;
+    cin >> valor;
+
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            matriz[i][j] = valor;
+        }
+    }
+
+    cout << "\nMatriz preenchida:\n";
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            cout << matriz[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void calcularRaizQuadradaMatriz(int LINHAS, int COLUNAS) {
+    float matriz[LINHAS][COLUNAS];
+
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+
+    cout << "\nRaiz quadrada dos elementos da matriz:\n";
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            cout << sqrt(matriz[i][j]) << " ";
+        }
+        cout << endl;
+    }
+}
+
+void encontrarMaximoMinimo(int LINHAS, int COLUNAS) {
+    int matriz[LINHAS][COLUNAS];
+    int maximo, minimo;
+
+    cout << "Digite os elementos da matriz:\n";
+    for (int i = 0; i < LINHAS; ++i) {
+        for (int j = 0; j < COLUNAS; ++j) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+
+            if (i == 0 && j == 0) {
+                maximo = minimo = matriz[i][j];
+            } else {
+                if (matriz[i][j] > maximo) {
+                    maximo = matriz[i][j];
+                }
+                if (matriz[i][j] < minimo) {
+                    minimo = matriz[i][j];
+                }
+            }
+        }
+    }
+
+    cout << "\nValor máximo: " << maximo << "\n";
+    cout << "Valor mínimo: " << minimo << "\n";
+}
+
+int main() {
+    int LINHAS, COLUNAS, TAMANHO;
+
+    cout << "Digite as dimensões da matriz (LINHAS e COLUNAS): ";
+    cin >> LINHAS >> COLUNAS;
+
+    cout << "Escolha a operação desejada:\n";
+    cout << "1 - Somar matrizes\n";
+    cout << "2 - Preencher e mostrar matrizes\n";
+    cout << "3 - Preencher e mostrar matriz\n";
+    cout << "4 - Processar matriz\n";
+    cout << "5 - Processar matrizes\n";
+    cout << "6 - Processar matrizes quadradas\n";
+    cout << "7 - Converter temperaturas\n";
+    cout << "8 - Preencher matriz com valor fixo\n";
+    cout << "9 - Calcular raiz quadrada dos elementos da matriz\n";
+    cout << "10 - Encontrar máximo e mínimo\n";
+    cout << "Opção: ";
+    int opcao;
+    cin >> opcao;
+
+    switch (opcao) {
+        case 1:
+            somaMatrizes(LINHAS, COLUNAS);
+            break;
+        case 2:
+            cout << "Digite o tamanho da matriz: ";
+            cin >> TAMANHO;
+            preencherEMostrarMatrizes(TAMANHO);
+            break;
+        case 3:
+            preencherEMostrarMatriz(LINHAS, COLUNAS);
+            break;
+        case 4:
+            cout << "Digite o tamanho da matriz: ";
+            cin >> TAMANHO;
+            int matrizA[TAMANHO];
+            int matrizC[TAMANHO][3];
+            processarMatriz(TAMANHO, matrizA, matrizC);
+            break;
+        case 5:
+            cout << "Digite o tamanho da matriz: ";
+            cin >> TAMANHO;
+            float matrizB[TAMANHO], matrizC2[TAMANHO][2];
+            processarMatrizes(TAMANHO, matrizA, matrizB, matrizC2);
+            break;
+        case 6:
+            processarMatrizesQuadrada(LINHAS, COLUNAS);
+            break;
+        case 7:
+            converterTemperaturas(LINHAS, COLUNAS);
+            break;
+        case 8:
+            preencherEMostrarMatrizComValorFixo(LINHAS, COLUNAS);
+            break;
+        case 9:
+            calcularRaizQuadradaMatriz(LINHAS, COLUNAS);
+            break;
+        case 10:
+            encontrarMaximoMinimo(LINHAS, COLUNAS);
+            break;
+        default:
+            cout << "Opção inválida!";
+            break;
+    }
+
+    return 0;
+}
